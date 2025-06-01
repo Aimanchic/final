@@ -1,0 +1,36 @@
+<RegisterScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "Добавить сотрудника"
+            font_size: 24
+
+        TextInput:
+            id: username_input
+            hint_text: "Новый логин"
+
+        TextInput:
+            id: password_input
+            hint_text: "Новый пароль"
+            password: True
+
+        Label:
+            id: message
+            text: ""
+            color: 1,0,0,1
+
+        Button:
+            text: "Добавить"
+            size_hint_y: None
+            height: 50
+            on_press: root.register()
+
+        Button:
+            text: "Назад"
+            size_hint_y: None
+            height: 50
+            on_press:
+                root.manager.current = "products"

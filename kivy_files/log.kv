@@ -1,0 +1,29 @@
+<LoginScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 20
+        spacing: 10
+
+        Label:
+            text: "Авторизация"
+            font_size: 24
+
+        TextInput:
+            id: username_input
+            hint_text: "Логинини"
+
+        TextInput:
+            id: password_input
+            hint_text: "Паролинини"
+            password: True
+
+        Label:
+            id: message
+            text: ""
+            color: 1,0,0,1
+
+        Button:
+            text: "Войти"
+            size_hint_y: None
+            height: 50
+            on_press: root.login()

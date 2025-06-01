@@ -1,0 +1,62 @@
+<AddProductScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 40
+        spacing: 20
+
+        Label:
+            text: "Добавление продукта"
+            font_size: 24
+            size_hint_y: None
+            height: 40
+
+        TextInput:
+            id: name_input
+            hint_text: "Название товара"
+            font_size: 24
+            size_hint_y: None
+            height: 70
+
+        TextInput:
+            id: category_input
+            hint_text: "Категория"
+            font_size: 24
+            size_hint_y: None
+            height: 70
+
+        TextInput:
+            id: quantity_input
+            hint_text: "Количество"
+            input_filter: 'int'
+            font_size: 24
+            size_hint_y: None
+            height: 70
+
+        TextInput:
+            id: price_input
+            hint_text: "Цена за единицу"
+            input_filter: 'float'
+            font_size: 24
+            size_hint_y: None
+            height: 70
+
+        Label:
+            id: message
+            text: ""
+            color: 1, 0, 0, 1
+            size_hint_y: None
+            height: 20
+
+        Button:
+            text: "Добавить"
+            font_size: 24
+            size_hint_y: None
+            height: 70
+            on_release: root.add_product()
+
+        Button:
+            text: "Назад"
+            font_size: 24
+            size_hint_y: None
+            height: 70
+            on_release: root.manager.current = "products"

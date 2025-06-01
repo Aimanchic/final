@@ -1,0 +1,63 @@
+<AddItemScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        Label:
+            text: "Добавить товар для продажи"
+            font_size: 24
+            size_hint_y: None
+            height: 70
+
+        TextInput:
+            id: item_name
+            hint_text: "Название товара"
+            size_hint_y: None
+            height: 70
+
+        BoxLayout:
+            id: ingredient_box
+            orientation: "vertical"
+            size_hint_y: None
+            height: self.minimum_height
+
+        Label:
+            text: "Состав:"
+            size_hint_y: None
+            height: 70
+
+        ScrollView:
+            BoxLayout:
+                id: selected_box
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 5
+
+        Label:
+            id: message
+            text: ""
+            color: 1,0,0,1
+            size_hint_y: None
+            height: 70
+
+        Button:
+            text: "Сохранить товар"
+            size_hint_y: None
+            height: 70
+            on_press: root.save_item()
+
+        TextInput:
+            id: price_input
+            hint_text: "Цена продажи"
+            input_filter: 'float'
+            size_hint_y: None
+            height: 70
+
+        Button:
+            text: "Назад"
+            size_hint_y: None
+            height: 70
+            on_release:
+                root.manager.current = "products"

@@ -1,0 +1,56 @@
+<ManageUsersScreen>:
+    BoxLayout:
+        orientation: "vertical"
+        padding: 10
+        spacing: 10
+
+        Label:
+            text: "Список сотрудников"
+            font_size: 24
+            size_hint_y: None
+            height: 70
+
+        ScrollView:
+            BoxLayout:
+                id: user_list
+                orientation: "vertical"
+                size_hint_y: None
+                height: self.minimum_height
+                spacing: 5
+
+        Label:
+            text: "Добавить нового сотрудника"
+            size_hint_y: None
+            height: 70
+
+        TextInput:
+            id: username_input
+            hint_text: "Логин"
+            size_hint_y: None
+            height: 70
+
+        TextInput:
+            id: password_input
+            hint_text: "Пароль"
+            password: True
+            size_hint_y: None
+            height: 70
+
+        Label:
+            id: message
+            text: ""
+            color: 1,0,0,1
+            size_hint_y: None
+            height: 70
+
+        Button:
+            text: "Добавить сотрудника"
+            size_hint_y: None
+            height: 70
+            on_release: root.add_user()
+
+        Button:
+            text: "Назад"
+            size_hint_y: None
+            height: 70
+            on_release: root.manager.current = "products"
